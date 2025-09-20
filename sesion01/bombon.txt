@@ -1,0 +1,33 @@
+Una confitería quiere hacer bombones.
+Tienen a disposición chocolate negro o blanco
+y pueden o no tener nueces el chocolate
+Los moldes pueden ser en forma de estrella y circular
+
+
+Requisitos:
+- hacer bombones de chocolate negro y blanco
+- los bombones pueden tener nueces
+- bombones con forma de estrella y circulo
+
+Objetos:
+- Bombón
+
+Características:
+- Bombón
+    - forma
+    - nueces
+    - chocolate
+
+Acciones:
+- (No hay acciones)
+
+# Diseño:
+Clases:
+- Bombon💟:
+    - Nombre: Bombon
+    - Atributos:
+        - chocolate
+        - nueces
+        - forma
+    - Métodos:
+        - (No hay métodos)
