@@ -18,7 +18,6 @@ El programa debe ofrecer un menú con las siguientes opciones:
 
 # Análisis
 Requisitos:
-- Simular una consola de mezcla BeatBox.
 - La consola añade una pista de audio.
 - La consola ajusta el volumen.
 - La consola muestra su estado actual (pista y volumen).
@@ -33,6 +32,20 @@ Características:
 Acciones:
 - BeatBox: seleccionar_pista, ajustar_volumen, aplicar_efecto, mostrar_estado.
   
+# Diseño:
+Clases:
+- BeatBox :
+    - Nombre: BeatBox 
+    - Atributos:
+      - pista_actual
+      - volumen
+      - efecto_actual
+      - efectos_disponibles
+    - Métodos:
+      - iniciarPartida()
+      - obtener_ganador(opcion_jugador, opcion_computadora)
+      - mostrarPuntaje()
+      - reiniciarJuego()  
 ```mermaid
 classDiagram
     class BeatBox {

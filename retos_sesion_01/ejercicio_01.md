@@ -17,12 +17,12 @@ Objetos:
 
 Características:
 - Hamburguesa
-    - tipo
-    - lechuga
-    - tomate
-    - cebolla
-    - mayonesa
-    - lugar
+  - tipo
+  - lechuga
+  - tomate
+  - cebolla
+  - mayonesa
+  - lugar
 
 Acciones:
 - (No hay acciones)

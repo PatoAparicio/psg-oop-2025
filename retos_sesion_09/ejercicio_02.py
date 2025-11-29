@@ -44,10 +44,6 @@ class BeatBox:
         print(f"Efecto: {self.efecto_activo}")
 
 
-def obtener_input(mensaje):
-    return input(mensaje)
-
-
 consola = BeatBox()
 
 while True:
@@ -58,19 +54,19 @@ while True:
         print("4. Mostrar Estado Actual")
         print("5. Salir")
         
-        opcion = obtener_input("Elige una opción (1-5): ")
+        opcion = input("Elige una opción (1-5): ")
         
         if opcion == '1':
-            pista = obtener_input("Ingresa el nombre de la pista: ")
+            pista = input("Ingresa el nombre de la pista: ")
             consola.seleccionar_pista(pista)
         
         elif opcion == '2':
-            accion = obtener_input("Ajustar: ¿subir o bajar volumen?: ")
+            accion = input("Ajustar: ¿subir o bajar volumen?: ")
             consola.ajustar_volumen(accion)
             
         elif opcion == '3':
             print(f"Opciones: eco, reverb, distorsión")
-            efecto = obtener_input("Ingresa el efecto a aplicar: ")
+            efecto = input("Ingresa el efecto a aplicar: ")
             consola.aplicar_efecto(efecto)
             
         elif opcion == '4':

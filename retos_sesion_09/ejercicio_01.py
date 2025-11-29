@@ -11,36 +11,36 @@ class PiedraPapelTijera:
             cls.__instancia.puntaje_computadora = 0
         return cls.__instancia
 
-    def iniciarPartida(self, opcion_jugador):
-        print(f"¡Juego Piedra, Papel o Tijera iniciado!")
+    def iniciarPartida(self):
         opcion_computadora = random.choice(self.opciones)
-        resultado = self.obtenerGanador(opcion_jugador.lower(), opcion_computadora)
-        print(resultado)
-        self.mostrarPuntaje() 
-        return resultado
-    
-    def obtenerGanador(self, opcion_jugador, opcion_computadora):
+        print(f"¡Juego Piedra, Papel o Tijera iniciado!")
+        print("\nSelecciona tu jugada:")
+        print("piedra")
+        print("papel")
+        print("tijera")
+        opcion_jugador = input("Tu elección: ")
         if opcion_jugador not in self.opciones:
-            return "Opción inválida. Intente de nuevo."
+            print("Opción inválida. Intente de nuevo.")
 
         print(f"\nJugador elige: {opcion_jugador}")
         print(f"Computadora elige: {opcion_computadora}")
 
         if opcion_jugador == opcion_computadora:
-            return "¡Empate!"
+            print("¡Empate!")
 
         elif (opcion_jugador == "piedra" and opcion_computadora == "tijera") or \
              (opcion_jugador == "papel" and opcion_computadora == "piedra") or \
              (opcion_jugador == "tijera" and opcion_computadora == "papel"):
             self.puntaje_jugador += 1
-            return "¡Ganaste!"
+            print("¡Ganaste!")
 
         else:
             self.puntaje_computadora += 1
-            return "¡Perdiste!"
-
+            
+        self.mostrarPuntaje() 
+            
     def mostrarPuntaje(self):
-        print(f"\n--- Puntaje Actual ---")
+        print(f"\n Puntaje Actual")
         print(f"Jugador: {self.puntaje_jugador}")
         print(f"Computadora: {self.puntaje_computadora}")
 
@@ -48,16 +48,8 @@ class PiedraPapelTijera:
     def reiniciarJuego(self):
         self.puntaje_jugador = 0
         self.puntaje_computadora = 0
-        print("\nEl juego ha sido reiniciado y el puntjr es cero.")
+        print("\nEl juego ha sido reiniciado y el puntaje es cero.")
         self.mostrarPuntaje()
-
-def obtener_opcion_jugador():
-    print("\nSelecciona tu jugada:")
-    print("piedra")
-    print("papel")
-    print("tijera")
-    eleccion = input("Tu elección: ")
-    return eleccion.capitalize()
 
 juego = PiedraPapelTijera()
 while True:
@@ -70,11 +62,7 @@ while True:
     opcion = input("Elige una opción (1-4): ")
         
     if opcion == '1':
-        jugada = obtener_opcion_jugador()
-        if jugada:
-            juego.iniciarPartida(jugada)
-        else:
-            print("Opción no válida.")
+        juego.iniciarPartida()
        
     elif opcion == '2':
         juego.mostrarPuntaje()
@@ -87,4 +75,4 @@ while True:
         break
           
     else:
-       print("💢 Opción no válida.")
+       print("Opción no válida.")

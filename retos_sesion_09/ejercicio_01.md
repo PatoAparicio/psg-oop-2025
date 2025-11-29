@@ -25,10 +25,29 @@ Objetos:
 - PiedraPapelTijera: Representa el juego en sí.
 
 Características:
-- PiedraPapelTijera: score_jugador, score_computadora, opciones.
+- PiedraPapelTijera: 
+  - score_jugador
+  - score_computadora
+  - opciones
 
 Acciones:
-- PiedraPapelTijera: iniciarPartida(opcion_jugador), reinicia, muestra score.
+- PiedraPapelTijera: 
+  - iniciarPartida(opcion_jugador)
+  - reiniciarJuego
+  - muestraPuntaje
+
+# Diseño:
+Clases:
+- PiedraPapelTijera:
+    - Nombre: PiedraPapelTijera
+    - Atributos:
+      - puntaje_jugador
+      - puntaje_computadora
+      - opciones
+    - Métodos:
+      - iniciarPartida()
+      - mostrarPuntaje()
+      - reiniciarJuego()
   
 ```mermaid
 classDiagram
@@ -36,8 +55,7 @@ classDiagram
         -puntaje_jugador: int
         -puntaje_computadora: int
         -opciones: tuple
-        +iniciarPartida(opcion_jugador)
-        -obtener_ganador(opcion_jugador, opcion_computadora)
+        +iniciarPartida()
         +mostrarPuntaje()
         +reiniciarJuego()
     }
