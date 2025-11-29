@@ -7,7 +7,7 @@ class BeatBox:
             cls.__instancia = super().__new__(cls)
             cls.__instancia.pista_actual = "Ninguna pista cargada"
             cls.__instancia.volumen = 0
-            cls.__instancia.efecto_activo = "Ninguno"
+            cls.__instancia.efecto_actual = "Ninguno"
             print("Bienvenidos a la Consola BeatBox")
         return cls.__instancia
 
@@ -31,7 +31,7 @@ class BeatBox:
     def aplicar_efecto(self, efecto):
         efecto = efecto.lower()
         if efecto in self.efecto_disponibles:
-            self.efecto_activo = efecto
+            self.efecto_actual = efecto
             print(f"Efecto aplicado: {efecto}.")
         else:
             print(f"Efecto inválido.")
@@ -41,7 +41,7 @@ class BeatBox:
         print(f"ESTADO ACTUAL DE BEATBOX")
         print(f"Pista: {self.pista_actual}")
         print(f"Volumen: {self.volumen}")
-        print(f"Efecto: {self.efecto_activo}")
+        print(f"Efecto: {self.efecto_actual}")
 
 
 consola = BeatBox()

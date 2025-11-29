@@ -27,10 +27,17 @@ Objetos:
 - BeatBox: Representa el juego en sí.
 
 Características:
-- BeatBox: pista_actual, volumen, efecto_actual.
+- BeatBox: 
+  - pista_actual
+  - volumen
+  - efecto_actual
 
 Acciones:
-- BeatBox: seleccionar_pista, ajustar_volumen, aplicar_efecto, mostrar_estado.
+- BeatBox: 
+  - seleccionar_pista
+  - ajustar_volumen
+  - aplicar_efecto
+  - mostrar_estado.
   
 # Diseño:
 Clases:
@@ -40,12 +47,11 @@ Clases:
       - pista_actual
       - volumen
       - efecto_actual
-      - efectos_disponibles
     - Métodos:
-      - iniciarPartida()
-      - obtener_ganador(opcion_jugador, opcion_computadora)
-      - mostrarPuntaje()
-      - reiniciarJuego()  
+      - seleccionar_pista(pista) 
+      - ajustar_volumen(accion)
+      - aplicar_efecto(efecto)
+      - mostrar_estado()
 ```mermaid
 classDiagram
     class BeatBox {
