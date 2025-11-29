@@ -11,9 +11,9 @@ class BeatBox:
             print("Bienvenidos a la Consola BeatBox")
         return cls.__instancia
 
-    def seleccionar_pista(self, nombre_pista):
-        self.pista_actual = nombre_pista
-        print(f"Pista cargada: '{nombre_pista}'.")
+    def seleccionar_pista(self, pista):
+        self.pista_actual = pista
+        print(f"Pista cargada: '{pista}'.")
 
     def ajustar_volumen(self, accion):
         accion = accion.lower()
@@ -61,8 +61,8 @@ while True:
         opcion = obtener_input("Elige una opción (1-5): ")
         
         if opcion == '1':
-            nombre = obtener_input("Ingresa el nombre de la pista: ")
-            consola.seleccionar_pista(nombre)
+            pista = obtener_input("Ingresa el nombre de la pista: ")
+            consola.seleccionar_pista(pista)
         
         elif opcion == '2':
             accion = obtener_input("Ajustar: ¿subir o bajar volumen?: ")

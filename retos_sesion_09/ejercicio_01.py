@@ -19,19 +19,19 @@ class PiedraPapelTijera:
         self.mostrarPuntaje() 
         return resultado
     
-    def obtenerGanador(self, opcion_jugador: str, opcion_compu: str):
+    def obtenerGanador(self, opcion_jugador, opcion_computadora):
         if opcion_jugador not in self.opciones:
             return "Opción inválida. Intente de nuevo."
 
         print(f"\nJugador elige: {opcion_jugador}")
-        print(f"Computadora elige: {opcion_compu}")
+        print(f"Computadora elige: {opcion_computadora}")
 
-        if opcion_jugador == opcion_compu:
+        if opcion_jugador == opcion_computadora:
             return "¡Empate!"
 
-        elif (opcion_jugador == "Piedra" and opcion_compu == "Tijera") or \
-             (opcion_jugador == "Papel" and opcion_compu == "Piedra") or \
-             (opcion_jugador == "Tijera" and opcion_compu == "Papel"):
+        elif (opcion_jugador == "piedra" and opcion_computadora == "tijera") or \
+             (opcion_jugador == "papel" and opcion_computadora == "piedra") or \
+             (opcion_jugador == "tijera" and opcion_computadora == "papel"):
             self.puntaje_jugador += 1
             return "¡Ganaste!"
 
@@ -53,9 +53,9 @@ class PiedraPapelTijera:
 
 def obtener_opcion_jugador():
     print("\nSelecciona tu jugada:")
-    print("Piedra")
-    print("Papel")
-    print("Tijera")
+    print("piedra")
+    print("papel")
+    print("tijera")
     eleccion = input("Tu elección: ")
     return eleccion.capitalize()
 

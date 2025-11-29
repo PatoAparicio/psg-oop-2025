@@ -37,7 +37,7 @@ classDiagram
         -puntaje_computadora: int
         -opciones: tuple
         +iniciarPartida(opcion_jugador)
-        -obtener_ganador(jugador, compu)
+        -obtener_ganador(opcion_jugador, opcion_computadora)
         +mostrarPuntaje()
         +reiniciarJuego()
     }
