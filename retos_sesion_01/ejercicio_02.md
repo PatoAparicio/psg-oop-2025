@@ -13,16 +13,16 @@ Requisitos:
 - Permitir seleccionar talla de pantalones (32 a 44).
   
 Objetos:
-- Camisetas.
-- Pantalones.
+- Camiseta
+- Pantalon
 
 Características:
 - Camisetas:
     - color
-    - tipoManga
+    - tipo_manga
     - talla
 - Pantalones:
-    - tipoTela
+    - tipo_tela
     - color
     - talla
 
@@ -36,15 +36,15 @@ Clases:
     - Nombre: Camiseta
     - Atributos:
       - color
-      - tipoManga
+      - tipo_manga
       - talla
     - Métodos:
         - (No hay métodos)
 
-- Pantalón:
-   - Nombre: Pantalón
+- Pantalones:
+   - Nombre: Pantalon
     - Atributos:
-      - tipoTela
+      - tipo_tela
       - color
       - talla
     - Métodos:
@@ -54,15 +54,15 @@ Clases:
 classDiagram
 class Camiseta {
     color
-    tipoManga
+    tipo_manga
     talla
     }
 ```
 
 ```mermaid
 classDiagram
-class Pantalón {
-    tipoTela
+class Pantalon {
+    tipo_tela
     color
     talla
     }

@@ -9,23 +9,23 @@ Requisitos:
 -  Permitir descargar el dibujo final en formato PNG o JPG.
 
 Objetos:
-- DibujoPerro.
+- DibujoPerro
 
 Características:
 - Dibujo:
     - raza
-    - colorPelaje
+    - color_pelaje
     - tamaño
-    - tipoOreja
+    - tipo_oreja
     - sombrero 
     - gafas
     - formato 
   
 Acciones:
 - DibujoPerro:
-    - seleccionarCaracteristica
-    - agregarAccesorio
-    - descargarDibujo 
+    - seleccionar_caracteristica
+    - agregar_accesorio
+    - descargar_dibujo 
 
 # Diseño:
 Clases:
@@ -33,23 +33,23 @@ Clases:
     - Nombre: Dibujo
     - Atributos:
       - raza
-      - colorPelaje
+      - color_pelaje
       - tamaño
-      - tipoOreja
+      - tipo_oreja
       - sombrero 
       - gafas
       - formato   
     - Métodos:
-      - seleccionarCaracteristica
-      - agregarAccesorio
-      - descargarDibujo
+      - seleccionar_caracteristica()
+      - agregar_accesorio()
+      - descargar_dibujo()
 ```mermaid
 classDiagram
 class DibujoPerro {
     raza
-    colorPelaje
+    color_pelaje
     tamaño
-    tipoOreja
+    tipo_preja
     sombrero 
     gafas
     formato   

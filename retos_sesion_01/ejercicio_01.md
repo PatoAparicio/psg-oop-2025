@@ -22,7 +22,7 @@ Características:
 
 Acciones:
 - Hamburguesa
-  - agregarExtra 
+  - agregar_extra 
   - llevar
   
 # Diseño:
@@ -37,7 +37,7 @@ Clases:
     - mayonesa
     - lugar
   - Métodos:
-      - agregarExtra 
+      - agregar_extra 
       - llevar
 ```mermaid
 classDiagram
@@ -48,7 +48,7 @@ class Hamburguesa {
     cebolla
     mayonesa
     lugar
-    agregarExtra()
+    agregar_extra()
     llevar()
     }
 ```
