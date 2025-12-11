@@ -3,7 +3,7 @@ Las camisetas pueden ser de color rojo, azul o verde y los pantalones de color n
 Las camisetas tienen las tallas: S, M, L, XL
 Los pantalones tienen las tallas desde la 32 hasta la 44
 
-### Aálisis 
+## Aálisis 
 Requisitos:
 - Ofrecer camisetas de manga corta o larga.
 - Ofrecer pantalones de mezclilla o tela.
@@ -39,7 +39,7 @@ Clases:
       - tipo_manga
       - talla
     - Métodos:
-        - (No hay métodos)
+      - (No hay métodos)
 
 - Pantalones:
    - Nombre: Pantalon
@@ -48,7 +48,7 @@ Clases:
       - color
       - talla
     - Métodos:
-        - (No hay métodos)
+      - (No hay métodos)
 
 ```mermaid
 classDiagram

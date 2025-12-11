@@ -1,7 +1,7 @@
 Un restaurante quiere ofrecer hamburguesas. Los clientes pueden elegir entre hamburguesa de: res, pollo o vegetariana.
 Los clientes pueden agregar extras como: lechuga, tomate, cebolla y mayonesa. Ademas los clientes pueden decidir comer en el restaurante o llevar su pedido
 
-### Análisis
+## Análisis
 
 Requisitos:
 - Ofrecer hamburguesas de res, pollo o vegetariana.
@@ -25,7 +25,7 @@ Acciones:
   - agregar_extra 
   - llevar
   
-# Diseño:
+## Diseño:
 Clases:
 - Hamburguesa:
   - Nombre: Hamburguesa

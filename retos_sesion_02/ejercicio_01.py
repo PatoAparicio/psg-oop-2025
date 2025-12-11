@@ -5,12 +5,12 @@ class Animal:
         self.tipo = tipo
         self.lugar = lugar
 
-animal1 = Animal("León", "mamífero", "Sabana africana")
-animal2 = Animal("Elefante", "mamífero", "Bosques de Asia")
-animal3 = Animal("Cocodrilo", "reptil", "Ríos de América")
-animal4 = Animal("Águila", "ave", "Montañas rocosas")
+leon = Animal("León", "mamífero", "Sabana africana")
+elefante = Animal("Elefante", "mamífero", "Bosques de Asia")
+cocodrilo = Animal("Cocodrilo", "reptil", "Ríos de América")
+aguila = Animal("Águila", "ave", "Montañas rocosas")
 print("Animales registrados:")
-print("Mamífero 1: ",animal1.origen, animal1.especie, animal1.tipo, animal1.lugar)
-print("Mamífero 2: ",animal2.origen, animal2.especie, animal2.tipo, animal2.lugar)
-print("Reptíl: ",animal3.origen, animal3.especie, animal3.tipo, animal3.lugar)
-print("Ave: ",animal4.origen, animal4.especie, animal4.tipo, animal4.lugar)
+print(f"Mamífero: Nombre: {leon.especie} | Tipo: {leon.tipo} | Origen: {leon.origen} | Encontrado en: {leon.lugar}")
+print(f"Mamífero: Nombre: {elefante.especie} | Tipo: {elefante.tipo} | Origen: {elefante.origen} | Encontrado en: {elefante.lugar}")
+print(f"Mam+ifero: Nombre: {cocodrilo.especie} | Tipo: {cocodrilo.tipo} | Origen: {cocodrilo.origen} | Encontrado en: {cocodrilo.lugar}")
+print(f"Mam+ifero: Nombre: {aguila.especie} | Tipo: {aguila.tipo} | Origen: {aguila.origen} | Encontrado en: {aguila.lugar}")

@@ -1,35 +1,35 @@
 class Vino:
-    def __init__(self, nombre, tipo, cepa, año_produccion):
+    def __init__(self, nombre, tipo, cepa, anio_produccion):
         self.nombre = nombre
         self.tipo = tipo
         self.cepa = cepa
-        self.año_produccion = año_produccion
+        self.anio_produccion = anio_produccion
 
 class Queso:
-    def __init__(self, nombre, variedad, edad, sal):
+    def __init__(self, nombre, variedad, edad, lleva_sal):
         self.nombre = nombre
         self.variedad = variedad
         self.edad = edad  
-        self.sal = sal
+        self.lleva_sal = lleva_sal
 
 # Instanciar vinos
-vino1 = Vino("Malbec Reserve", "Tinto", "Malbec", 2020)
-vino2 = Vino("Chardonnay Premium", "Blanco", "Chardonnay", 2021)
-vino3 = Vino("Cabernet Sauvignon", "Tinto", "Cabernet Sauvignon", 2019)
-vino4 = Vino("Rosé Fresco", "Rosado", "Garnacha", 2022)
+vino_1 = Vino("Malbec Reserve", "Tinto", "Malbec", 2020)
+vino_2 = Vino("Chardonnay Premium", "Blanco", "Chardonnay", 2021)
+vino_3 = Vino("Cabernet Sauvignon", "Tinto", "Cabernet Sauvignon", 2019)
+vino_4 = Vino("Rosé Fresco", "Rosado", "Garnacha", 2022)
 
 # Instanciar quesos
-queso1 = Queso("Manchego", "Ovino", 12, True)
-queso2 = Queso("Brie", "Blando", 3, False)
-queso3 = Queso("Gouda Ahumado", "Semi-duro", 6, True)
+queso_1 = Queso("Manchego", "Ovino", 12, True)
+queso_2 = Queso("Brie", "Blando", 3, False)
+queso_3 = Queso("Gouda Ahumado", "Semi-duro", 6, True)
 
 print("VINOS:")
-print("Vino 1: ",vino1.nombre, vino1.tipo, vino1.cepa, vino1.año_produccion)
-print("Vino 2: ",vino2.nombre, vino2.tipo, vino2.cepa, vino2.año_produccion)
-print("Vino 3: ",vino3.nombre, vino3.tipo, vino3.cepa, vino3.año_produccion)
-print("Vino 4: ",vino4.nombre, vino4.tipo, vino4.cepa, vino4.año_produccion)
+print(f"Nombre: {vino_1.nombre} | Tipo: {vino_1.tipo} | Cepa: {vino_1.cepa} | Año: {vino_1.anio_produccion}")
+print(f"Nombre: {vino_2.nombre} | Tipo: {vino_2.tipo} | Cepa: {vino_2.cepa} | Año: {vino_2.anio_produccion}")
+print(f"Nombre: {vino_3.nombre} | Tipo: {vino_3.tipo} | Cepa: {vino_3.cepa} | Año: {vino_3.anio_produccion}")
+print(f"Nombre: {vino_4.nombre} | Tipo: {vino_4.tipo} | Cepa: {vino_4.cepa} | Año: {vino_4.anio_produccion}")
 
 print("QUESOS:")
-print("Queso 1: ",queso1.nombre, queso1.variedad, queso1.edad, queso1.sal)
-print("Queso 2: ",queso2.nombre, queso2.variedad, queso2.edad, queso2.sal)
-print("Queso 3: ",queso3.nombre, queso3.variedad, queso3.edad, queso3.sal)
+print(f"Nombre: {queso_1.nombre} | Variedad: {queso_1.variedad} | Edad (meses): {queso_1.edad} | Con Sal: {queso_1.lleva_sal}")
+print(f"Nombre: {queso_2.nombre} | Variedad: {queso_2.variedad} | Edad (meses): {queso_2.edad} | Con Sal: {queso_2.lleva_sal}")
+print(f"Nombre: {queso_3.nombre} | Variedad: {queso_3.variedad} | Edad (meses): {queso_3.edad} | Con Sal: {queso_3.lleva_sal}")

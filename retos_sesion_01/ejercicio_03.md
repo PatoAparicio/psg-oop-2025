@@ -2,7 +2,7 @@ Estas diseñando una app para dibujar de perros con IA los usuarios pueden selec
 Además, pueden agregar hasta dos accesorios, como sombreros o gafas.
 El dibujo final puede descargarse en formato PNG o JPG.
 
-### Análisis
+## Análisis
 Requisitos:
 - Permitir la selección de características del perro (raza, color del pelaje, tamaño, tipo de orejas).
 -  Permitir agregar hasta dos accesorios (sombreros o gafas).

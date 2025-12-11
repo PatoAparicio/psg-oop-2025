@@ -8,29 +8,42 @@ Este zoológico cuenta con 2 mamíferos, 1 reptil y 1 ave
 - Escribe el codigo en Python para crear la clase Animal
 - Instancia los 4 animales con sus respectivos atributos
 
+## Análisis
 Requisitos:
-- Registrar animales.
-- Registrar los atributos de cada animal
+- Registrar animales (especie, tipo, lugar donde los encontraron).
+- Todos los animales son ferales.
 
 Objetos:
 - Animal
 Características:
 - Animal
-    - Origen
-    - Especie
-    - Tipo
-    - Lugar
+    - origen
+    - especie
+    - tipo
+    - lugar
 
 Acciones:
 - (No hay acciones)
 
+## Diseño:
+Clases:
+- Animal:
+  - Nombre: Animal
+  - Atributos:
+    - origen
+    - especie
+    - tipo
+    - lugar
+  - Métodos:
+    - (No hay métodos)
+
 ```mermaid
 classDiagram
     class Animal {
-        String Origen
-        String Especie
-        String Tipo
-        String Lugar
+        String origen
+        String especie
+        String tipo
+        String lugar
     }
 ```
 
