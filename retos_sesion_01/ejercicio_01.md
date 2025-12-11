@@ -4,13 +4,9 @@ Los clientes pueden agregar extras como: lechuga, tomate, cebolla y mayonesa. Ad
 ### Análisis
 
 Requisitos:
-- Un restaurante ofrece hamburguesas
-- Hay 3 tipos de hamburgesas de res, pollo y vegetariana
-- Se puede agregar lechuga
-- Se puede agregar tomate
-- Se puede agregar cebolla 
-- Se puede agregar mayonesa
-- Se puede comer el pedido en el restaurante o llevarlo
+- Ofrecer hamburguesas de res, pollo o vegetariana.
+- Permitir agregar extras como lechuga, tomate, cebolla y mayonesa.
+- Permitir decidir comer en el restaurante o llevar el pedido.
 
 Objetos:
 - Hamburguesa
@@ -25,21 +21,24 @@ Características:
   - lugar
 
 Acciones:
-- (No hay acciones)
-
+- Hamburguesa
+  - agregarExtra 
+  - llevar
+  
 # Diseño:
 Clases:
 - Hamburguesa:
-    - Nombre: Hamburguesa
-    - Atributos:
-      - tipo
-      - lechuga
-      - tomate
-      - cebolla
-      - mayonesa
-      - lugar
-    - Métodos:
-        - (No hay métodos)
+  - Nombre: Hamburguesa
+  - Atributos:
+    - tipo
+    - lechuga
+    - tomate
+    - cebolla
+    - mayonesa
+    - lugar
+  - Métodos:
+      - agregarExtra 
+      - llevar
 ```mermaid
 classDiagram
 class Hamburguesa {
@@ -49,5 +48,7 @@ class Hamburguesa {
     cebolla
     mayonesa
     lugar
+    agregarExtra()
+    llevar()
     }
 ```

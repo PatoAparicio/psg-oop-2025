@@ -5,14 +5,13 @@ Los pantalones tienen las tallas desde la 32 hasta la 44
 
 ### Aálisis 
 Requisitos:
-- Una tienda ofrece camisetas y pantalones.
-- Las camisetas pueden ser de manga corta o larga.
-- Las camisetas pueden ser de color rojo, azul o verde.
-- Las camisetas pueden ser de tallas S, M, L, XL.
-- Los pantalones pueden ser de mezclilla o tela.
-- Los pantalones pueden ser de color negro, gris o blanco.
-- Los pantalones pueden ser de tallas desde la 32 hasta la 44
-
+- Ofrecer camisetas de manga corta o larga.
+- Ofrecer pantalones de mezclilla o tela.
+- Permitir seleccionar color de camisetas (rojo, azul, verde).
+- Permitir seleccionar talla de camisetas (S, M, L, XL).
+- Permitir seleccionar color de pantalones (negro, gris, blanco).
+- Permitir seleccionar talla de pantalones (32 a 44).
+  
 Objetos:
 - Camisetas.
 - Pantalones.
@@ -20,10 +19,10 @@ Objetos:
 Características:
 - Camisetas:
     - color
-    - tipo_manga
+    - tipoManga
     - talla
 - Pantalones:
-    - tipo_tela
+    - tipoTela
     - color
     - talla
 
@@ -37,15 +36,15 @@ Clases:
     - Nombre: Camiseta
     - Atributos:
       - color
-      - tipo_manga
+      - tipoManga
       - talla
     - Métodos:
         - (No hay métodos)
 
 - Pantalón:
-   - Nombre: Pantalon
+   - Nombre: Pantalón
     - Atributos:
-      - tipo_tela
+      - tipoTela
       - color
       - talla
     - Métodos:
@@ -55,7 +54,7 @@ Clases:
 classDiagram
 class Camiseta {
     color
-    tipo_manga
+    tipoManga
     talla
     }
 ```
@@ -63,7 +62,7 @@ class Camiseta {
 ```mermaid
 classDiagram
 class Pantalón {
-    tipo_tela
+    tipoTela
     color
     talla
     }

@@ -4,53 +4,57 @@ El dibujo final puede descargarse en formato PNG o JPG.
 
 ### Análisis
 Requisitos:
-- Diseño de una app para dibujar perros con IA.
-- Se puede seleccionar la raza.
-- Se puede seleccionar el color de pelaje.
-- Se puede seleccionar el tamaño.
-- Se puede seleccionar el tipo de orejas.
-- Se puede seleccionar los accesorios que son sombrero o gafas.
-- Se puede seleccionar formato de descarga PNG o JPG.
+- Permitir la selección de características del perro (raza, color del pelaje, tamaño, tipo de orejas).
+-  Permitir agregar hasta dos accesorios (sombreros o gafas).
+-  Permitir descargar el dibujo final en formato PNG o JPG.
 
 Objetos:
-- Dibujo.
+- DibujoPerro.
 
 Características:
 - Dibujo:
     - raza
-    - color_pelaje
+    - colorPelaje
     - tamaño
-    - tipo_oreja
+    - tipoOreja
     - sombrero 
     - gafas
     - formato 
   
 Acciones:
-- (No hay acciones)
+- DibujoPerro:
+    - seleccionarCaracteristica
+    - agregarAccesorio
+    - descargarDibujo 
 
 # Diseño:
 Clases:
-- Dibujo:
+- DibujoPerro:
     - Nombre: Dibujo
     - Atributos:
       - raza
-      - color_pelaje
+      - colorPelaje
       - tamaño
-      - tipo_oreja
+      - tipoOreja
       - sombrero 
       - gafas
-      - formato  
+      - formato   
     - Métodos:
-        - (No hay métodos)
+      - seleccionarCaracteristica
+      - agregarAccesorio
+      - descargarDibujo
 ```mermaid
 classDiagram
-class Dibujo {
+class DibujoPerro {
     raza
-    color_pelaje
+    colorPelaje
     tamaño
-    tipo_oreja
+    tipoOreja
     sombrero 
     gafas
-    formato  
+    formato   
+    seleccionarCaracteristica()
+    agregarAccesorio()
+    descargarDibujo()  
     }
 ```
