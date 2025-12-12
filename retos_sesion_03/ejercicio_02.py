@@ -1,74 +1,51 @@
 class Cocinero:
-    productividad_receta=10
-    receta_list = {
+    recetas_disponibles = {
         "pan": {"harina", "agua"},
         "pizza": {"harina", "agua", "sal", "tomate", "queso"},
         "galleta": {"harina", "agua", "sal", "chocolate"}
     }
 
-    def __init__(self, nombre, receta, productividad, ingredientes):
-        self.nombre=nombre
-        self.productividad = productividad
-        self.receta=receta
-        self.ingredientes = set(ingredientes) 
-        print(f"El cocinero {nombre} tiene los siguientes ingredientes: {ingredientes}")
+    def __init__(self, ingredientes):
+        self.ingredientes = set(ingredientes)
+        self.productividad = 0
+        print(f"El cocinero tiene los siguientes ingredientes: {self.ingredientes}")
 
-    # Métodos de Instancia
-    def verificar_ingredientes(self, receta: str) -> bool:
-        if receta not in self.receta_list:
+    def preparar_receta(self, receta):
+        if receta not in self.recetas_disponibles:
             print(f"La receta '{receta}' no está definida en el sistema.")
             return False
 
-        ingredientes_requeridos = self.receta_list[receta]
+        ingredientes_requeridos = self.recetas_disponibles[receta]
         ingredientes_faltantes = ingredientes_requeridos - self.ingredientes
         
-        if not ingredientes_faltantes:
-            return True
-        else:
-            print(f"Faltan ingredientes: {ingredientes_faltantes}")
-            print(f"No se pudo preparar la receta '{receta}'")
+        if ingredientes_faltantes:
+            print(f"Faltan ingredientes para '{receta}': {ingredientes_faltantes}")
             return False
-
-    def preparar_receta(self, receta) -> str:
-        tiene_ingredientes = self.verificar_ingredientes(receta)
-        if tiene_ingredientes:
-            self.productividad += self.productividad_receta
-            print(f"Receta '{receta}' preparada exitosamente")
-            print(f"El cocinero {self.nombre} tiene {self.productividad} de productividad")
-            return f"Receta '{receta}' preparada exitosamente"
-
-        else:
-            return f"No se pudo preparar la receta '{receta}'"
-
-    #Método de Clase (@classmethod)
-
-    @classmethod
-    def obtener_lista_recetas(cls):
-        return list(cls.receta_list.keys())
-
-    # --- Método Estático (@staticmethod) ---
-
+        
+        self.productividad += 1
+        print(f"Receta '{receta}' preparada exitosamente")
+        print(f"Productividad del cocinero: {self.productividad}")
+        return True
+    
     @staticmethod
-    def calcular_productividad_total(cocineros):
-        productividad_total = sum(c.productividad for c in cocineros)
-        return productividad_total
+    def productividad_total(cocineros):
+        total = sum(c.productividad for c in cocineros)
+        return total
+
 
 # Instanciar Cocineros
-cocinero1 = Cocinero("Chef Ramiro","pan",  10, ["harina", "agua", "sal"])
-cocinero1.preparar_receta("pan")
-cocinero1.preparar_receta("pizza")
+cocinero_1 = Cocinero(["harina", "agua", "sal"])
+cocinero_1.preparar_receta("pan")
+cocinero_1.preparar_receta("pizza")
 
+cocinero_2 = Cocinero(["harina", "agua", "sal", "tomate", "queso"])
+cocinero_2.preparar_receta("pan")
+cocinero_2.preparar_receta("pizza")
 
-cocinero2 = Cocinero("Chef Sonia","pan",  100, ["harina", "agua", "sal", "tomate", "queso"])
-cocinero2.preparar_receta("pan")
-cocinero2.preparar_receta("pizza")
+# Calcular productividad total
+cocineros = [cocinero_1, cocinero_2]
+productividad_agregada = Cocinero.productividad_total(cocineros)
+print(f"\nProductividad total de la cocina: {productividad_agregada}")
 
-cocinero3 = Cocinero("Chef Sam","pan",  0, [])
-cocinero3.preparar_receta("galleta")
-cocinero3.preparar_receta("pizza")
-
-cocineros = [cocinero1, cocinero2, cocinero3]
-productividad_total = Cocinero.calcular_productividad_total(cocineros)
-print(f"Productividad total de todos los cocineros: {productividad_total}")
 
 
