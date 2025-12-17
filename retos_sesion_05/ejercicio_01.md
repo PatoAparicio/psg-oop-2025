@@ -8,13 +8,12 @@ Existen dos tipos de vehículos con características específicas:
 Bicicleta: Incrementar su velocidad mediante la acción de pedalear.
 Avión: Incrementar su velocidad mediante la acción de volar.
 
-
+## Análisis
 Requisitos:
-- Simulación que represente el comportamiento de vehículos.
-- Velocidad es un dato protegido (solo se consulta directamente; se modifica mediante acciones específicas).
-- Medio es público (se consulta y se modifica libremente).
-- La Bicicleta incrementa su velocidad mediante la acción de pedalear.
-- El Avión incrementa su velocidad mediante la acción de volar.
+- El vehículo tiene velocidad y medio.
+- La velocidad es protegida y medio es público.
+- La Bicicleta debe pedalear para aumentar la velocidad.
+- El Avión debe volar para aumentar la velocidad.
 
 Objetos:
 - Vehiculo (Clase Padre)
@@ -23,32 +22,53 @@ Objetos:
   
 Características:
 - Vehiculo:
- - velocidad: Float
- - medio: String
+ - velocidad
+ - medio
 
 - Bicicleta y Avion: (No tienen atributos propios)
     
 Acciones:
 - Vehiculo:
- - velocidad 
- - medio
+  - get_velocidad()
 - Bicicleta:
- - pedalear(esfuerzo)
+  - pedalear(incremento)
 - Avion:
- - volar(empuje)
+  - volar(incremento)
   
+## Diseño:
+Clases:
+- Vehiculo:
+  - Nombre: Vehiculo
+  - Atributos:
+    - velocidad
+    - medio
+  - Métodos:
+    - get_velocidad()
+  
+- Bicicleta:
+  - Nombre: Bicicleta
+  - Atributos: No tienen atributos propios.
+  - Métodos:
+    - pedalear(incremento)
+
+- Avion:
+  - Nombre: Avion
+  - Atributos: No tienen atributos propios.
+  - Métodos:
+    - volar(incremento)
+
 ```mermaid
 classDiagram
     class Vehiculo {
-        +velocidad : float 
-        +medio : str
-        #_incrementar_velocidad(incremento) : void
+        #velocidad: Int
+        +medio: String
+        get_velocidad()
     }
-    
     class Bicicleta {
-        +pedalear(esfuerzo) : str
+        +pedalear(incremento)
     }
-    
     class Avion {
-        +volar(empuje) : str
+        +volar(incremento)
     }
+    Vehiculo <|-- Bicicleta
+    Vehiculo <|-- Avion

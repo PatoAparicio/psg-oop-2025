@@ -1,46 +1,47 @@
 class Nadador:
-    def nadar(self) -> str:
-        return "Desplazamiento en el agua."
+    def __init__(self, nombre):
+        self.nombre = nombre
+    
+    def nadar(self):
+        print(f"{self.nombre} está nadando.")
 
 class Volador:
-    def volar(self) -> str:
-        return "Desplazamiento en el aire."
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def volar(self):
+        print(f"{self.nombre} está volando.")
+
 
 class Pez(Nadador):
-    def mostrar(self) -> str:
-        habilidades = [self.nadar()]
-        return f"Tipo: Pez\n   Habilidad principal: {habilidades[0]}"
+    def mostrar(self):
+        print(f"\nPersonaje: {self.nombre} (Pez)")
+        self.nadar()
+        print("Habilidades: Nadar")
 
 class Pajaro(Volador):
-    def mostrar(self) -> str:
-        habilidades = [self.volar()]
-        return f"Tipo: Pájaro\n   Habilidad principal: {habilidades[0]}"
+    def mostrar(self):
+        print(f"\nPersonaje: {self.nombre} (Pájaro)")
+        self.volar()
+        print("Habilidades: Volar")
 
 class Pato(Nadador, Volador):
-    def mostrar(self) -> str:
-        habilidades = [self.nadar(), self.volar()]
-        return f"Tipo: Pato\n   Habilidades: \n   1. {habilidades[0]}\n   2. {habilidades[1]}"
-
-print("DEMOSTRACIÓN DE HABILIDADES")
-
-pez = Pez()
-pajaro = Pajaro()
-pato = Pato()
-
-
-print(" PEZ")
-print(f"Pez acción: {pez.nadar()}\n")
-print(pez.mostrar())
+    def __init__(self, nombre):
+        Nadador.__init__(self, nombre)
+        Volador.__init__(self, nombre) 
+        
+    def mostrar(self):
+        print(f"\nPersonaje: {self.nombre} (Pato)")
+        self.nadar()
+        self.volar()
+        print("Habilidades: Nadar y Volar")
 
 
-print("PÁJARO")
-print(f"Pájaro acción: {pajaro.volar()}\n")
-print(pajaro.mostrar())
+pez = Pez("Nemo")
+pajaro = Pajaro("Tito")
+pato = Pato("Donald")
 
-
-print(" PATO")
-print(f"Pato nadando: {pato.nadar()}")
-print(f"Pato volando: {pato.volar()}")
-print(pato.mostrar())
-
+pez.mostrar()
+pajaro.mostrar()
+pato.mostrar()
 

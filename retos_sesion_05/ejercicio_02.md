@@ -8,50 +8,99 @@ Pájaro: tiene la habilidad de volar.
 Pato: tiene ambas habilidades, puede nadar y volar.
 Cada personaje debe contar con un método mostrar() que indique el tipo de personaje y su habilidad principal o combinada.
 
+## Análisis
 Requisitos:
-- Desarrollar un videojuego tipo aventura.
-- Pez nada.
-- Pájaro vuela.
+- Existe dos habilidades nadar y volar.
+- El Pez puede nadar.
+- Pájaro puede volar.
 - Pato puede nadar y volar.
 
 Objetos:
-- Pez
-- Pájaro
-- Pato
 - Nadador
 - Volador
-    
+- Pez
+- Pajaro
+- Pato
+
+Características:
+- Nadador
+  - nombre
+- Volador
+  - nombre
+- Pez
+  - nombre
+- Pajaro
+  - nombre
+- Pato
+  - nombre
+
 Acciones:
-- Pez
- - mostrar 
-- Pájaro
- - mostrar 
-- Pato
- - mostrar 
 - Nadador
- - Nada
+ - nadar()
 - Volador
- - Vuela   
+ - volar() 
+- Pez
+ - mostrar()
+- Pajaro
+ - mostrar()
+- Pato
+ - mostrar() 
+
+## Diseño:
+Clases:
+- Nadador:
+  - Nombre: Nadador
+  - Atributos:
+    - nombre
+  - Métodos:
+    - nadar()
+  
+- Volador:
+  - Nombre: Volador
+  - Atributos:
+    - nombre
+  - Métodos:
+    - volar()
+
+- Pez:
+  - Nombre: Pez
+  - Atributos:
+    - nombre
+  - Métodos:
+    - mostrar()
+
+- Pajaro:
+  - Nombre: Pajaro
+  - Atributos:
+    - nombre
+  - Métodos:
+    - mostrar()
+- Pato:
+  - Nombre: Pato
+  - Atributos:
+    - nombre
+  - Métodos:
+    - mostrar()
   
 ```mermaid
 classDiagram
-    class Nadador {
+class Nadador {
         +nadar()
     }
-
     class Volador {
         +volar()
     }
-
     class Pez {
         +mostrar()
     }
-    
     class Pajaro {
         +mostrar()
     }
-    
     class Pato {
         +mostrar()
     }
+    Nadador <|-- Pez
+    Volador <|-- Pajaro
+    Nadador <|-- Pato
+    Volador <|-- Pato
 ```
