@@ -1,56 +1,51 @@
 class Celula:
-    costo_division = 50.0
-    def __init__(self, adn: str, tipo_celula: str, energia_inicial: float):
-        self._adn = adn 
-        self._energia = max(0.0, energia_inicial) 
-        self.tipo = tipo_celula 
+    def __init__(self, adn, tipo_celula, energia):
+        self.__adn = adn 
+        self.__energia = max(0.0, energia) 
+        self.__tipo_celula = tipo_celula 
         
-        print(f"Célula '{self.tipo}' . ADN: {self._adn[:5]} .Energía inicial: {self._energia:.1f}.")
+        print(f"Célula '{self.__tipo_celula}' . ADN: {self.__adn[:5]} .Energía inicial: {self.__energia:.1f}.")
 
-    def comer(self, alimento: str) -> str:
-            self._energia +=alimento
-            return f"Célula comió {alimento}. Energía actual: {self._energia:.1f}"
+    @property
+    def adn(self):
+        return self.__adn
 
+    @property
+    def energia(self):
+        return self.__energia
 
-    def dividirse(self) -> str:
-        if self._energia >= self.costo_division:
-            self._energia -= self.costo_division
-            nueva_celula = Celula(self._adn, self.tipo, self._energia / 2.0)
-            self._energia /= 2.0
-            
-            return f"Célula se ha dividido exitosamente. Energía: -{self.costo_division:.1f} (Costo) y repartida. Energía actual: {self._energia:.1f}\n"f"Célula hija: Tipo '{nueva_celula.tipo}', Energía inicial {nueva_celula._energia:.1f}."
+    @property
+    def tipo_celula(self):
+        return self.__tipo_celula
+
+    @tipo_celula.setter
+    def tipo_celula(self, nuevo_tipo):
+        self.__tipo_celula = nuevo_tipo
+        print(f"Tipo de célula actualizado a: {nuevo_tipo}")
+
+    def comer(self, cantidad):
+        self.__energia += cantidad
+        print(f"La célula come. Energía actual: {self.__energia}")
+
+    def dividirse(self, costo):
+        if self.__energia >= costo:
+            self.__energia -= costo
+            print(f"La célula se divide. Costo: {costo}. Energía restante: {self.__energia}")
+            return True
         else:
-            return f"No hay suficiente energía para dividirse. Se necesita {self.costo_division:.1f} y solo tiene {self._energia:.1f}."
+            print(f"División fallida: Energía insuficiente ({self.__energia}).")
+            return False
 
-    @property
-    def adn(self) -> str:
-        return self._adn
+print("--- Creando una Célula ---")
+celula = Celula("ATGC", "Epitelial", 100)
+print(f"ADN inicial: {celula.adn}")
+print(f"Tipo inicial: {celula.tipo_celula}")
+print(f"Energía inicial: {celula.energia}")
 
-    @property
-    def energia(self) -> float:
-        return self._energia
-
-    @property
-    def tipo(self) -> str:
-        return self._tipo
-
-    @tipo.setter
-    def tipo(self, nuevo_tipo: str):
-        self._tipo = nuevo_tipo
-
-print("Inicialización de Célula ")
-celula_madre = Celula("ATCGGCTAAG", "Epitelial", 40.0)
-
-print(f"ADN de la célula: {celula_madre.adn}")
-print(f"Energía actual: {celula_madre.energia:.1f}")
-print("Alimentación de célula:")
-print(celula_madre.comer(50))
-print("División de célula:")
-print(celula_madre.dividirse())
-
-
-print("Cambio de tipo de célula:")
-print(f"Tipo actual: {celula_madre.tipo}")
-
-celula_madre.tipo = "Neurona"
-print(f"Nuevo tipo: {celula_madre.tipo}")
+print("\n--- Modificando Tipo de Célula ---")
+celula.tipo_celula = "Neuronal" 
+print(f"Tipo actualizado: {celula.tipo_celula}")
+print("\n--- Modificando Energía ---")
+celula.comer(50) 
+celula.dividirse(30) 
+celula.dividirse(200) 

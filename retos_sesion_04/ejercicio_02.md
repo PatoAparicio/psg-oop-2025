@@ -4,38 +4,47 @@ tipo de célula: Puede consultarse y modificarse libremente.
 energía: Es un dato privado. Puede aumentar o disminuir, únicamente mediante las acciones de comer o dividirse.
 
 Requisitos:
-- Simular el comportamiento de una célula.
-- ADN se consulta no cambia.
-- Tipo de célula se consulta y modifica.
-- Energía dato privado. 
-- Energía puede aumentar o disminuir con comer y dividirse.
+- La céluda debe tener ADN que se puede consultar pero no modificar.
+- La célula debe tener un tipo que puede consultarse y modificarse libremente.
+- La célula debe tener un nivel de energía privado, modificable solo a través de las acciones de comer o dividirse.
+- La célula puede aumentar su energía mediante la acción de comer.
+- La célula puede disminuir su energía mediante la acción de dividirse.
 
 Objetos:
-- Célula
+- Celula
 Características:
-- Célula
-    - ADN
-    - Tipo de célula
-    - Energia
+- Celula
+    - adn
+    - tipo_celula
+    - energia
     
 Acciones:
 - Célula:
     - get_adn()
-    - set_tipo(tipo)
-    - get_tipo()
+    - set_tipo_celula(tipo)
+    - get_tipo_celula()
     - get_energia()
     - set_energia()
+
+## Diseño:
+Clases:
+- Celula:
+  - Nombre: Celula
+  - Atributos:
+      - adn
+      - tipo
+      - energia
+  - Métodos:
+    - comer(cantidad) 
+    - dividirse(costo) 
   
 ```mermaid
 classDiagram
     class Celula {
-        -adn : str
-        -tipo : str
+        -adn : String
+        -tipo : string
         -energia : float
-        +comer(alimento) : str
-        +dividirse() : str
-        +energia : float
-        +tipo : str
-        +set_tipo(nuevo_tipo) : void
+        +comer(cantidad) : String
+        +dividirse(costo) : String
     }
 ```

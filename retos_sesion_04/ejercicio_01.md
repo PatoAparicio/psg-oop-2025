@@ -7,42 +7,58 @@ nombre del titular: Es público. Puede consultarse y modificarse libremente.
 
 
 Requisitos:
-- Un banco necesita gestionar cuentas bancarias.
-- Cada cuenta tiene un saldo que es privado.
-- Saldo se puede consultar.
-- Saldo se modifica con un depósito o retiro.
-- Depósito ingresa dinero e incrementa el saldo.
-- Retiro de dinero, cuando hay saldo disponible.
-- Número de cuenta privado Se consulta pero no se modifca.
-- Nombre de titular es público se consulta y modifica.
+- Gestionar cuentas bancarias.
+- La cuenta tiene un saldo, deposito, retiro, número de cuentra, nombre del titular.
+- El saldo se puede consultar, modificar con depósito o retiro y es privado.
+- El depósito ingresa dinero e incrementa el saldo.
+- Se puede realizar un retiro de dinero solo cuando hay el saldo disponible.
+- El número de cuenta se puede consultar y es privado, no se puede modifcar.
+- El nombre de titular se puede consultar y modificar, es público.
 
 Objetos:
-- Cuenta bancaria
+- Cuenta 
 Características:
-- Cuenta bancaria
-    - Nombre del títular
-    - Número de cuenta
-    - Saldo
-    - Depósito
-    - Retiro
+- Cuenta
+    - nombre_títular
+    - numero_cuenta
+    - saldo
     
 Acciones:
-- Cuenta bancaria:
+- Cuenta:
     - get_nombre()
     - set_nombre(nombre)
     - get_numero_cuenta()
     - get_saldo()
-    - set_saldo(cantidad)
+    - set_retiro(cantidad)
     - set_deposito(cantidad)
-  
+
+## Diseño:
+Clases:
+- Cuenta:
+  - Nombre: Cuenta
+  - Atributos:
+    - nombre_títular
+    - numero_cuenta
+    - saldo
+  - Métodos:
+    - get_nombre()
+    - set_nombre(nombre)
+    - get_numero_cuenta()
+    - get_saldo()
+    - set_retiro(cantidad)
+    - set_deposito(cantidad) 
+
 ```mermaid
 classDiagram
     class Cuenta {
         -saldo : float
         -numero_cuenta : String
-        -nombre_titular : String
-        +depositar(cantidad) : String
-        +retirar(cantidad) : String
-        +set_nombre_titular(nombre) : void
+        +nombre_titular : String
+        +get_nombre()
+        +set_nombre(nombre)
+        +get_numero_cuenta()
+        +get_saldo()
+        +set_retiro(cantidad)
+        +set_deposito(cantidad) 
     }
 ```
